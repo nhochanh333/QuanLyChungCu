@@ -1,0 +1,43 @@
+{% extends 'layout/base.html' %}
+{% block title %}
+<!--block title : vùng có thể đổi dữ liệu-->
+Trang chủ
+{% endblock %}
+
+{% block content%}
+{% if products %}
+<div class="row">
+    {% for p in products %}
+    <div class="col-md-3 col-6">
+        <div class="card">
+            <img class="card-img-top" src="{{ p.image }}" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">{{ p.name }}</h4>
+                <p class="card-text">{{ p.price }}VNĐ</p>
+                <a href="#" class="btn btn-primary">xem chi tiết</a>
+                <button class="btn btn-danger">Đặt hàng</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="alert alert-warning mt-2">
+    Không có sản phẩm nào !
+</div>
+{% endif %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

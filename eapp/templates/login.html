@@ -1,0 +1,24 @@
+{% extends 'layout/base.html' %}
+{% block title %}Đăng Nhập {% endblock %}
+
+
+{% block content%}
+<h1 class="text-center text-success mt-2">ĐĂNG NHẬP NGƯỜI DÙNG</h1>
+<!--method là post /ko get vì data đóng gói body / mã hóa dữ liệu đó-->
+<from method="post" action="/login">
+    <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="username" placeholder="Tên đăng nhập" name="username">
+<!--        name để gửi lên server-->
+        <label for="username">Tên đăng nhập</label>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="password" placeholder="Mật khẩu" name="password">
+<!--        name để gửi lên server-->
+        <label for="password">Mật khẩu</label>
+    </div>
+    <div class="form-floating mb-3 mt-3">
+        <button class="btn btn-success">Đăng Nhập</button>
+    </div>
+</from>
+
+{% endblock %}
